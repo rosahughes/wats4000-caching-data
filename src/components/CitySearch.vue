@@ -76,6 +76,8 @@ export default {
         }
       })
       .then(response => {
+        this.$ls.set(cacheLabel, response.data, cacheExpiry);
+        console.log('New query has been cached as: ' + cacheLabel);
         this.results = response.data;
         this.showLoading = false;
       })

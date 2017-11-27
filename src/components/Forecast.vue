@@ -61,6 +61,7 @@ export default {
       }
     })
     .then(response => {
+      this.$ls.set(cacheLabel, response.data, cacheExpiry);
       this.showLoading = false;
       this.weatherData = response.data;
     })
